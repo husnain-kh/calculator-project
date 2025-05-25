@@ -1,0 +1,504 @@
+/* ============================================================
+   🎓 SCIENTIFIC CALCULATOR UI STYLES
+   Description: Well-structured CSS template for a scientific calculator
+   Author: [Husnain Kahloon]
+   Date: [22/05/2025]
+============================================================ */
+
+
+/* ============================================================
+   🌐 ROOT VARIABLES
+   Define all colors, spacing, font sizes, shadows, etc.
+============================================================ */
+:root {
+   --blackish-color: #191919;
+   --bluesh-color: #466DD8;
+   --white-color: #ffffff;
+   --grayish-color: #999999;
+   --blakish-gray: #3a3a3a;
+   --grayish-white: #fffefe;
+}
+
+
+/* ============================================================
+   📦 BASE & RESET
+   Normalize default styles and apply base rules
+============================================================ */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+html {
+   scroll-behavior: smooth;
+}
+
+
+
+
+
+.crop-container {
+   width: 88px;
+   /* jo crop size chahiye */
+   height: 36px;
+   /* jo crop size chahiye */
+   overflow: hidden;
+   /* baahar ka part chhupa do */
+   position: relative;
+}
+
+body {
+   width: 100%;
+   background-color: var(--blackish-color);
+   height: 100vh;
+}
+
+.crop-container img {
+   position: absolute;
+   top: -32px;
+   /* image ko move kar ke desired part dikhao */
+   left: -6px;
+   width: 100px;
+   /* image ka original ya resize width */
+   height: auto;
+}
+
+button {
+   display: block;
+}
+
+
+/* ================================*\
+ #HEADER
+\* ================================*/
+
+
+
+
+.header {
+   position: relative;
+}
+
+.for-little-mobile {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1rem;
+   width: 100%;
+   height: 40px;
+   background-color: #03034c;
+   color: #fffefe;
+
+}
+
+.menu ion-icon {
+   font-size: 2rem;
+   margin-right: 8px;
+   transition: all 0.3s ease;
+   cursor: pointer;
+
+}
+
+.menu ion-icon:hover {
+   scale: 0.95;
+   color: var(--grayish-white);
+}
+
+
+
+
+.menu .close-icon {
+   display: none;
+}
+
+.menu.open .menu-icon {
+   display: none;
+}
+
+.menu.open .close-icon {
+   display: block;
+}
+
+
+
+
+ul {
+   position: absolute;
+   display: none;
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+   z-index: 1;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 4px;
+}
+
+ul.active {
+   display: flex;
+   flex-direction: column;
+   background-color: #ffffff;
+   align-items: center;
+   justify-content: space-between;
+   width: 150px;
+
+   margin-right: 8px;
+   padding: 8px 0;
+   max-height: 500px;
+   left: 50%;
+   /* move to middle */
+   transform: translateX(-50%);
+
+}
+
+li {
+   position: relative;
+   list-style: none;
+   display: block;
+   text-align: center;
+   background-color: #ffffff;
+   padding: 8px 0;
+   color: #3a3a3a;
+   cursor: pointer;
+
+}
+
+li::after {
+   position: absolute;
+   content: "";
+   height: 2px;
+   width: 0%;
+
+   left: 0;
+   bottom: 6px;
+   transition: all 0.4s ease-in-out;
+
+
+}
+
+li:hover::after,
+li.active::after {
+   background-color: #03034c;
+   width: 100%;
+}
+
+li:hover,
+li.active {
+   color: #03034c;
+}
+
+.line {
+
+   width: 100%;
+   height: 1px;
+   background-color: #c9c5c5;
+}
+
+.start-btn {
+   text-decoration: none;
+   padding: 8px 15px;
+   background-color: #03034c;
+   color: var(--white-color);
+   border-radius: 50px;
+}
+
+
+
+
+
+
+/* ============================================================
+   🧱 LAYOUT
+   Structure and main containers (body, wrapper, calculator)
+============================================================ */
+
+.calculator {
+
+   width: 100%;
+
+
+   background-color: var(--blackish-color);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+
+
+.heading-container {
+   width: 100%;
+   text-align: center;
+   padding-top: 24px;
+   height: 2rem;
+   border-bottom: 1px solid rgb(70, 70, 70);
+   display: flex;
+   align-items: end;
+   justify-content: center;
+   margin-bottom: 2px;
+
+}
+
+.heading-container h1 {
+   line-height: 16px;
+   font-size: 0.80rem;
+   font-family: 'Poppins', sans-serif;
+   font-weight: normal;
+   color: var(--bluesh-color);
+
+}
+
+/* ============================================================
+   🖥️ DISPLAY SCREEN
+   Styles for the result/input display area
+============================================================ */
+
+.input-container {
+   width: 100%;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   padding-inline-start: 2px;
+   border-bottom: 1px solid rgb(70, 70, 70);
+
+}
+
+.user-input {
+   all: unset;
+   width: 100%;
+   height: 95%;
+   font-size: 1.7rem;
+   color: var(--grayish-white);
+   font-family: sans-serif;
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+
+
+}
+
+.history ion-icon,
+.repeat ion-icon {
+   color: var(--grayish-color);
+   font-size: 20px;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+
+}
+
+.history ion-icon:hover,
+.repeat ion-icon:hover {
+   color: var(--white-color);
+}
+
+
+
+/* ============================================================
+   🎛️ BUTTONS GRID
+   Layout structure for the button arrangement
+============================================================ */
+
+.potrat-mode .potrat-btns {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   /* grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); */
+   row-gap: 6px;
+   padding: 3.5px;
+   column-gap: 12px;
+}
+
+.potrat-mode.to-land-scape .potrat-btns {
+   display: none;
+}
+
+
+
+.potrat-mode button {
+   width: 44px;
+   height: 44px;
+   background-color: transparent;
+   border: none;
+   border-radius: 50%;
+   color: var(--white-color);
+   font-size: 1.2rem;
+   cursor: pointer;
+   transition: all 0.25s ease;
+}
+
+.potrat-mode .blue {
+   color: var(--bluesh-color);
+}
+
+.potrat-mode .blue-bg {
+   background-color: var(--bluesh-color);
+}
+
+
+.potrat-mode button:hover {
+   background-color: var(--bluesh-color);
+   color: var(--white-color);
+}
+
+.potrat-mode .blue-bg:hover {
+   color: var(--bluesh-color);
+   background-color: var(--white-color);
+}
+
+
+
+
+
+
+
+.input-container {
+   height: 60px;
+}
+
+.calculator.land-scape .potrat-mode .potrat-btns {
+   display: none;
+}
+
+
+.potrat-mode.to-land-scape .land-scape-btns {
+   display: grid;
+   align-items: start;
+   justify-content: start;
+   grid-template-rows: repeat(8, 1fr);
+}
+
+
+/* about land-scape */
+
+.land-scape-btns {
+   display: none;
+}
+
+.not {
+   display: none;
+}
+
+
+
+
+.calculator.land-scape {
+   position: fixed;
+   top: 0;
+   left: -40px;
+   /* viewport width becomes height after rotation */
+   transform: rotateZ(90deg);
+
+}
+
+
+
+
+.calculator.land-scape .land-scape-btns {
+   display: grid;
+   grid-template-columns: repeat(8, 1fr);
+   row-gap: 2px;
+   column-gap: 6px;
+
+}
+
+
+
+
+
+
+
+/**
+* FOR TRANSITION
+*/
+.calculator {
+   transition: all 0.6s ease-in-out;
+   transform-origin: center center;
+   opacity: 1;
+}
+
+/* Transition when entering landscape */
+
+
+
+
+
+/* ============================================================
+   🔘 BUTTON STYLES
+   Base button style + individual button types
+============================================================ */
+
+.squre-btn {
+   position: relative;
+}
+
+.squre-btn sub,
+.squre-btn sup {
+   margin: -6px;
+}
+
+
+/* ------------------------------------------------------------
+   ➕ Numeric Buttons (0-9)
+------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+   ✖️ Operators (+, −, ×, ÷, %)
+------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+   🧮 Scientific Functions (sin, cos, tan, log, etc.)
+------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+   🔁 Utility Buttons (AC, DEL, etc.)
+------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+   ✅ Equal Button (=)
+------------------------------------------------------------ */
+
+
+/* ============================================================
+   🌓 THEMING
+   Dark/light mode switch styles (if applicable)
+============================================================ */
+
+
+/* ============================================================
+   📱 RESPONSIVE DESIGN
+   Media queries for mobile and tablets
+============================================================ */
+
+
+/* ============================================================
+   ✨ ANIMATIONS & TRANSITIONS
+   Smooth interactions, button effects, screen glow, etc.
+============================================================ */
+
+
+/* ============================================================
+   🧪 DEBUG & DEV TOOLS
+   Temporary outlines, helper classes for development
+============================================================ */
+
+
+/* ============================================================
+   📌 MISCELLANEOUS
+   Any extras, easter eggs, or experimental styles
+============================================================ */
+
+
+/* ============================================================
+   ✅ END OF STYLESHEET
+   Stay creative. Keep it elegant. 💡
+============================================================ */

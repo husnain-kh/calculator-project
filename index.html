@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator|HasisKh</title>
+    <!-- linking internal Style Sheet -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- appIcon -->
+    <link rel="icon" href="./hasisKhicon.jpg" type="image/png" />
+
+    <!-- google fonts links -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="for-little-mobile">
+        <div class="crop-container">
+          <img src="./hasislog.png" alt="HasisKh logo " />
+        </div>
+
+        <div class="menu">
+          <ion-icon name="menu-outline" class="icon menu-icon"></ion-icon>
+          <ion-icon name="close-outline" class="icon close-icon"></ion-icon>
+        </div>
+      </div>
+
+      <ul class="list">
+        <li id="home " class="active">Home</li>
+        <li id="about">About Me</li>
+        <li id="projects">Resume</li>
+        <li id="buy">Buy</li>
+        <div class="line"></div>
+        <li id="login">Login</li>
+        <a href="index.html" class="start-btn">Get Started</a>
+      </ul>
+    </header>
+
+    <!-- menu Start -->
+    <menu>
+      <div class="calculator">
+        <div class="heading-container">
+          <h1>Calculator</h1>
+        </div>
+        <div class="input-container">
+          <textarea class="user-input" disabled>0</textarea>
+          <div class="icons">
+            <div class="history">
+              <ion-icon name="timer-outline"></ion-icon>
+            </div>
+            <div class="repeat">
+              <ion-icon name="repeat-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="potrat-mode">
+          <div class="potrat-btns">
+            <button class="calc-btn blue">mc</button>
+            <button class="calc-btn blue">m+</button>
+            <button class="calc-btn blue">m-</button>
+            <button class="calc-btn blue">mr</button>
+            <button class="calc-btn blue">AC</button>
+            <button class="calc-btn blue">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </button>
+            <button class="calc-btn blue">%</button>
+            <button class="calc-btn blue">/</button>
+
+            <button class="calc-btn">7</button>
+            <button class="calc-btn">8</button>
+            <button class="calc-btn">9</button>
+            <button class="calc-btn blue">X</button>
+            <button class="calc-btn">4</button>
+            <button class="calc-btn">5</button>
+            <button class="calc-btn">6</button>
+            <button class="calc-btn blue">-</button>
+            <button class="calc-btn">1</button>
+            <button class="calc-btn">2</button>
+            <button class="calc-btn">3</button>
+            <button class="calc-btn blue">+</button>
+            <button class="calc-btn">^</button>
+            <button class="calc-btn">0</button>
+            <button class="calc-btn">.</button>
+            <button class="calc-btn blue-bg">=</button>
+          </div>
+
+          <div class="land-scape-btns">
+            <button class="calc-btn">2nd</button>
+            <button class="calc-btn">(</button>
+            <button class="calc-btn">)</button>
+            <button class="calc-btn">10<sup>x</sup></button>
+            <button class="calc-btn blue">mc</button>
+            <button class="calc-btn blue">m+</button>
+            <button class="calc-btn blue">m-</button>
+            <button class="calc-btn blue">mr</button>
+
+            <button class="calc-btn">1/x</button>
+            <button class="calc-btn">x<sup>2</sup></button>
+            <button class="calc-btn">x<sup>3</sup></button>
+            <button class="calc-btn">y<sup>x</sup></button>
+            <button class="calc-btn blue">AC</button>
+            <button class="calc-btn blue">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </button>
+            <button class="calc-btn blue">%</button>
+            <button class="calc-btn blue">/</button>
+            <button class="calc-btn">x!</button>
+            <button class="calc-btn squre-btn">
+              <sup>x</sup>
+              &#8730;
+              <sub>y</sub>
+            </button>
+
+            <button class="calc-btn">&#8730;</button>
+            <button class="calc-btn">lg</button>
+            <button class="calc-btn">7</button>
+            <button class="calc-btn">8</button>
+            <button class="calc-btn">9</button>
+            <button class="calc-btn blue">X</button>
+            <button class="calc-btn">sin</button>
+            <button class="calc-btn">cos</button>
+            <button class="calc-btn">tan</button>
+            <button class="calc-btn">In</button>
+            <button class="calc-btn">4</button>
+            <button class="calc-btn">5</button>
+            <button class="calc-btn">6</button>
+            <button class="calc-btn blue">-</button>
+            <button class="calc-btn">sinh</button>
+            <button class="calc-btn">cosh</button>
+            <button class="calc-btn">tanh</button>
+            <button class="calc-btn">e<sup>x</sup></button>
+            <button class="calc-btn">1</button>
+            <button class="calc-btn">2</button>
+            <button class="calc-btn">3</button>
+            <button class="calc-btn blue">+</button>
+            <button class="calc-btn">Rad</button>
+            <button class="calc-btn">π</button>
+            <button class="calc-btn">EE</button>
+            <button class="calc-btn">Rand</button>
+            <button class="calc-btn">^</button>
+            <button class="calc-btn">0</button>
+            <button class="calc-btn">.</button>
+            <button class="calc-btn blue-bg">=</button>
+          </div>
+        </div>
+      </div>
+    </menu>
+
+    <!-- ion-icons Link -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- internal style link -->
+    <script src="index.js"></script>
+  </body>
+</html>
