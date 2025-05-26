@@ -47,7 +47,7 @@
           <h1>Calculator</h1>
         </div>
         <div class="input-container">
-          <textarea class="user-input" disabled>0</textarea>
+          <textarea class="user-input" disabled id="display">0</textarea>
           <div class="icons">
             <div class="history">
               <ion-icon name="timer-outline"></ion-icon>
@@ -60,33 +60,33 @@
 
         <div class="potrat-mode">
           <div class="potrat-btns">
-            <button class="calc-btn blue">mc</button>
-            <button class="calc-btn blue">m+</button>
-            <button class="calc-btn blue">m-</button>
-            <button class="calc-btn blue">mr</button>
-            <button class="calc-btn blue">AC</button>
-            <button class="calc-btn blue">
+            <button class="calc-btn blue" data-id="mc">mc</button>
+            <button class="calc-btn blue" data-id="mPlus">m+</button>
+            <button class="calc-btn blue" data-id="mMinus">m-</button>
+            <button class="calc-btn blue" data-id="mr">mr</button>
+            <button class="calc-btn blue" data-id="clear">AC</button>
+            <button class="calc-btn blue" data-id="backspace">
               <ion-icon name="arrow-back-outline"></ion-icon>
             </button>
-            <button class="calc-btn blue">%</button>
-            <button class="calc-btn blue">/</button>
+            <button class="calc-btn blue" data-id="percent">%</button>
+            <button class="calc-btn blue" data-id="divide">/</button>
 
             <button class="calc-btn">7</button>
             <button class="calc-btn">8</button>
             <button class="calc-btn">9</button>
-            <button class="calc-btn blue">X</button>
+            <button class="calc-btn blue" data-id="multiply">X</button>
             <button class="calc-btn">4</button>
             <button class="calc-btn">5</button>
             <button class="calc-btn">6</button>
-            <button class="calc-btn blue">-</button>
+            <button class="calc-btn blue" data-id="minus">-</button>
             <button class="calc-btn">1</button>
             <button class="calc-btn">2</button>
             <button class="calc-btn">3</button>
-            <button class="calc-btn blue">+</button>
+            <button class="calc-btn blue" data-id="plus">+</button>
             <button class="calc-btn">^</button>
             <button class="calc-btn">0</button>
             <button class="calc-btn">.</button>
-            <button class="calc-btn blue-bg">=</button>
+            <button class="calc-btn blue-bg" data-id="equals">=</button>
           </div>
 
           <div class="land-scape-btns">
@@ -94,26 +94,25 @@
             <button class="calc-btn">(</button>
             <button class="calc-btn">)</button>
             <button class="calc-btn">10<sup>x</sup></button>
-            <button class="calc-btn blue">mc</button>
-            <button class="calc-btn blue">m+</button>
-            <button class="calc-btn blue">m-</button>
-            <button class="calc-btn blue">mr</button>
+            <button class="calc-btn blue" data-id="mc">mc</button>
+            <button class="calc-btn blue" data-id="mPlus">m+</button>
+            <button class="calc-btn blue" data-id="mMinus">m-</button>
+            <button class="calc-btn blue" data-id="mr">mr</button>
 
             <button class="calc-btn">1/x</button>
             <button class="calc-btn">x<sup>2</sup></button>
             <button class="calc-btn">x<sup>3</sup></button>
             <button class="calc-btn">y<sup>x</sup></button>
-            <button class="calc-btn blue">AC</button>
-            <button class="calc-btn blue">
+            <button class="calc-btn blue" data-id="clear">AC</button>
+            <button class="calc-btn blue" data-id="backspace">
               <ion-icon name="arrow-back-outline"></ion-icon>
             </button>
-            <button class="calc-btn blue">%</button>
-            <button class="calc-btn blue">/</button>
+            <button class="calc-btn blue" data-id="percent">%</button>
+            <button class="calc-btn blue" data-id="divide">/</button>
+
             <button class="calc-btn">x!</button>
             <button class="calc-btn squre-btn">
-              <sup>x</sup>
-              &#8730;
-              <sub>y</sub>
+              <sup>x</sup>&#8730;<sub>y</sub>
             </button>
 
             <button class="calc-btn">&#8730;</button>
@@ -121,7 +120,7 @@
             <button class="calc-btn">7</button>
             <button class="calc-btn">8</button>
             <button class="calc-btn">9</button>
-            <button class="calc-btn blue">X</button>
+            <button class="calc-btn blue" data-id="multiply">X</button>
             <button class="calc-btn">sin</button>
             <button class="calc-btn">cos</button>
             <button class="calc-btn">tan</button>
@@ -129,7 +128,7 @@
             <button class="calc-btn">4</button>
             <button class="calc-btn">5</button>
             <button class="calc-btn">6</button>
-            <button class="calc-btn blue">-</button>
+            <button class="calc-btn blue" data-id="minus">-</button>
             <button class="calc-btn">sinh</button>
             <button class="calc-btn">cosh</button>
             <button class="calc-btn">tanh</button>
@@ -137,15 +136,15 @@
             <button class="calc-btn">1</button>
             <button class="calc-btn">2</button>
             <button class="calc-btn">3</button>
-            <button class="calc-btn blue">+</button>
+            <button class="calc-btn blue" data-id="plus">+</button>
             <button class="calc-btn">Rad</button>
             <button class="calc-btn">π</button>
-            <button class="calc-btn">EE</button>
-            <button class="calc-btn">Rand</button>
+            <button class="calc-btn" data-id="ee">EE</button>
+            <button class="calc-btn" data-id="rand" id="mode">Rand</button>
             <button class="calc-btn">^</button>
             <button class="calc-btn">0</button>
             <button class="calc-btn">.</button>
-            <button class="calc-btn blue-bg">=</button>
+            <button class="calc-btn blue-bg" data-id="equals">=</button>
           </div>
         </div>
       </div>
